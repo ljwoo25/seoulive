@@ -1,0 +1,90 @@
+@charset "utf8";
+
+.view {
+    border: 1px solid black;
+    width: 1200px;
+}
+
+.view .view_top {
+    border: 1px solid black;
+}
+
+.view .view_top .top_user{
+    height: auto;
+}
+
+.view .view_top .top_title{
+    height: 90px;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+.view .view_top .top_date{
+    height: 50px;
+}
+
+
+.view .view_mid {
+    border: 1px solid black;
+    height: auto;
+}
+
+.view .view_mid .mid_day {
+    border-bottom: 1px solid #888;
+    height: auto;
+}
+
+.view .view_mid .mid_day .mid_day_day{
+    height: 100px;
+}
+
+.view .view_mid .mid_day .mid_des > ul > li{
+    border: 1px solid #DDD;
+    height: auto;
+    background: url(../img/ico_leftobj.png) 0 50% no-repeat;
+}
+
+.view .view_mid .mid_day .mid_des > ul > li > span{
+    margin-left: 20px;
+}
+
+.view .map {
+    height: 300px;
+    border: 1px solid black;
+}
+
+.view .commant {
+    border: 1px solid black;
+}
+
+.view .commant .commant_top {
+    height: 30px;
+    font-size: 18px;
+    border-bottom: #DDD solid 1px;
+}
+
+.view .commant .commant_mid {
+    border-bottom: #DDD solid 1px;
+}
+
+
+.view .commant .commant_mid .commant_box{
+    height: 120px;
+    width: 1060px;
+    margin: 10px;
+}
+
+.view .commant .commant_mid .commant_upload{
+    height: 120px;
+    width: 100px;
+    margin: 10px auto;
+
+}
+
+.view .commant .commant_bottom >ul >li .commant_id{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: solid 1px #BBB;
+}
