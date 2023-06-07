@@ -11,7 +11,7 @@ public class CourseDTO {
     private String WRITER;
     private String TITLE;
     private String REVIEW;
-//    private Integer TOTAL;
+    private Integer TOTAL;
 //    private Date WRITE_DATE;
 //    private Date MODIFY_DATE;
     private Date DURATION_START;

@@ -4,8 +4,9 @@ import lombok.Data;
 
 @Data
 public class CourseLikeDTO {
-    private Integer BOARD_SEQ;
-    private String BOARD;
+    private Integer board_seq;
+    private String board;
+    private String user;
     
 
 } // end class

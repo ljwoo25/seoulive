@@ -11,10 +11,11 @@ import org.zerock.seoulive.board.course.domain.CourseDTO;
 import org.zerock.seoulive.board.course.domain.CourseLikeDTO;
 import org.zerock.seoulive.board.course.domain.CoursePageTO;
 import org.zerock.seoulive.board.course.domain.CourseTravelVO;
+import org.zerock.seoulive.board.course.domain.CourseVO;
 import org.zerock.seoulive.board.course.domain.CourseWriteDTO;
 import org.zerock.seoulive.board.course.domain.CourseWriteVO;
 import org.zerock.seoulive.board.course.exception.ServiceException;
-import org.zerock.seoulive.board.course.persistence.CourseDAO;
+import org.zerock.seoulive.board.course.mapper.CourseMapper;
 import org.zerock.seoulive.board.travel.domain.TravelDTO;
 
 import lombok.NoArgsConstructor;
@@ -32,29 +33,9 @@ public class CourseServiceImpl
 		DisposableBean {
 
 	@Setter(onMethod_= {@Autowired})
-	private CourseDAO dao;		// 영속성 계층의 DAO 빈 주입받음
+	private CourseMapper dao;		// 영속성 계층의 DAO 빈 주입받음
 	
-	
-	
-//	// 1. 게시판 목록을 얻어 반환해주는 기능 수행
-//	@Override
-//	public List<CourseDTO> getList(CoursePageTO page) throws ServiceException {
-//		log.trace("getList() invoked.");
-//		
-//		try {
-//			return this.dao.courseList(page);
-//		} catch(Exception e){
-//			throw new ServiceException(e);
-//		} // try-catch
-//	} // getList
-//
-//	// 2. 총 게시물 개수 반환
-//	@Override
-//	public Integer getTotal() throws ServiceException {
-//		log.trace("getTotal() invoked.");
-//		
-//		return this.dao.getTotalAmount();
-//	} // getTotal
+
 
 	// 3. 코스게시물이 가지고 있는 여행지 목록 반환
 	@Override
@@ -62,6 +43,12 @@ public class CourseServiceImpl
 		log.trace("getTravelList() invoked.");
 		
 		return this.dao.selectTravelList(dto);
+	}
+	@Override
+	public List<CourseTravelVO> getTravelList(Integer seq) throws ServiceException {
+		log.trace("getTravelList() invoked.");
+		
+		return this.dao.selectTravelList2(seq);
 	}
 		
 	// 4. 검색 후 리스트 반환
@@ -78,7 +65,7 @@ public class CourseServiceImpl
 		return this.dao.getTotalSearch(page.getSearchType(), page.getKeyword());
 	} // getTotal
 	
-	// 6. 
+	// 6. 게시물 작성
 	@Override
 	public void register(CourseWriteDTO dto) throws ServiceException {
 		log.trace("register() invoked.");
@@ -90,7 +77,12 @@ public class CourseServiceImpl
 			throw new ServiceException(e);
 		} // try-catch
 	} // register
-	
+	@Override
+	public Integer getCourseSeq() throws ServiceException{
+		log.trace("getCourseSeq() invoked.");
+		
+		return this.dao.getCourseSeq().getSeq();
+	}
 	@Override
 	public void registerTravel(CourseWriteVO vo) throws ServiceException {
 		log.trace("register() invoked.");
@@ -103,14 +95,15 @@ public class CourseServiceImpl
 		} // try-catch
 	} // register
 	
-	// 7. 
+	// 7. Write에서 여행지 검색
 	@Override
 	public List<TravelDTO> getTravelData(String keyword) throws ServiceException{
         return this.dao.getTravelData(keyword);
     } // getTravelData
 	
 	
-	// 8.
+	// 8. 찜 기능
+	@Override
 	public void courseLike(CourseLikeDTO dto) throws ServiceException {
 		
 		try {
@@ -119,39 +112,68 @@ public class CourseServiceImpl
 		} catch(Exception e){
 			throw new ServiceException(e);
 		} // try-catch
-		
 	}
+	@Override
+	public void courseUnlike(CourseLikeDTO dto) throws ServiceException {
+		log.trace("courseUnlike() invoked.");
+		try {
+			this.dao.courseUnlike(dto);
+
+		} catch(Exception e){
+			throw new ServiceException(e);
+		} // try-catch
+	}
+	@Override
+	public List<CourseLikeDTO> courseLikeList(CourseLikeDTO dto) throws ServiceException {
+		log.trace("courseUnlike() invoked.");
+		try {
+			return this.dao.courseLikeList(dto);
+		} catch(Exception e){
+			throw new ServiceException(e);
+		} // try-catch
+	} // courseLikeList
 	
 	
-//
+	// 9. 특정 게시물 상세조회 (READ)
+	@Override
+    public CourseVO get(Integer seq) throws ServiceException {
+        log.trace("get() invoked");
+        try {
+        	return this.dao.read(seq);
+        } catch(Exception e){
+			throw new ServiceException(e);
+		} // try-catch	
+    } // get
+	@Override
+	public void total(Integer seq) throws ServiceException {
+		log.trace("get() invoked");
+        try {
+        	this.dao.total(seq);
+        } catch(Exception e){
+			throw new ServiceException(e);
+		} // try-catch
+	} // total
+	
+
 //	@Override
-//	public CourseVO get(Integer bno) throws ServiceException {
-//		log.trace("get() invoked.");
-//		
-//		try {
-//			return this.dao.select(bno);
-//		} catch(Exception e){
-//			throw new ServiceException(e);
-//		} // try-catch
-//	} // get
-//
-//	@Override
-//	public Boolean modify(CourseDTO dto) throws ServiceException {
+//	public boolean modify(courseDTO course) throws ServiceException {
 //		log.trace("modify() invoked.");
 //		
 //		try {
-//			return ( this.dao.update(dto) == 1 );
+//			return mapper.update(course) ==1;
 //		} catch(Exception e){
 //			throw new ServiceException(e);
 //		} // try-catch
 //	} // modify	
+	
+
 //	
 //	@Override
-//	public Boolean remove(Integer bno) throws ServiceException {
+//	public boolean remove(Integer seq) throws ServiceException {
 //		log.trace("remove() invoked.");
 //		
 //		try {
-//			return ( this.dao.delete(bno) == 1 );
+//			return mapper.delete(seq) ==1;
 //		} catch(Exception e){
 //			throw new ServiceException(e);
 //		} // try-catch
