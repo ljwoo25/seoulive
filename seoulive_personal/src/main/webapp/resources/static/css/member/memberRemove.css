@@ -1,0 +1,115 @@
+@import url('../reset.css');
+.hide{display: block;position:absolute;width:0;height:0;text-indent:-9999999px;overflow:hidden;}
+
+
+html, body {
+    height: 100%;
+}
+
+.passwordbox {
+    display: block;
+    padding-top: 5px;
+    padding-left: 2px;
+
+    width: 300px;
+    height: 30px;
+    top: 110px;
+    left: 50px;
+     /*border: 1px solid gray;*/
+
+    position: relative;
+    /*min-height: 100%;*/
+
+}
+.passwordquote {
+    display: block;
+    position: relative;
+    top: 5px;
+    color: gray;
+}
+.passwordnoti {
+    display: block;
+    width: 500px;
+    height: 20px;
+    position: relative;
+    top: 88px;
+    left: 50px;
+    margin-bottom: 10px;
+    color: red;
+    padding-bottom: 114px;
+     /*border: 1px solid saddlebrown;*/
+}
+.passwordnotibtn {
+    display: block;
+    position: relative;
+    top: 80px;
+    left: 430px;
+    border-radius: 20%;
+}
+
+/*탈퇴 사유*/
+.secessionreasonnoti {
+     /*border: 1px solid black;*/
+    display: block;
+    /* float: left; */
+    width: 60px;
+    left: 50px;
+    position: relative;
+    margin-top: 100px;
+}
+
+/*탈퇴사유 기입*/
+.secessionreasonquote {
+    width: 600px;
+    height: 50px;
+    border: 1px solid gray;
+    display: block;
+    padding-top: 10px;
+    padding-left: 2px;
+    top: 10px;
+    left: 50px;
+    position: relative;
+    color: gray;
+    /* position: fixed; */
+    min-height: 20%;
+    padding-bottom: 110px;
+}
+.buttoncheck {
+    position: absolute;
+    top: 700px;
+    left: 650px;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 8%;
+    text-align: center;
+    justify-content: center;
+    line-height: 50px;
+
+    cursor: pointer;
+    border: 1px solid gray;
+    color: black;
+
+}
+
+.secession {
+    position: relative;
+    display: block;
+    padding-bottom: 200px;
+}
+
+
+
+
+/*  */
+#container{margin:0 auto;max-width:1200px;}
+
+/* 게시판 공통 테이블 */
+.table_wrap table{width:100%;border-spacing:0;border-top:2px solid #2b2b2b;table-layout:fixed;}
+.table_wrap table thead th{padding:16px 10px;border-bottom:1px solid #d8d8d8;background-color:#f9f9f9;font-weight:400;}
+.table_wrap table tbody th{padding:15px 10px;border-bottom:1px solid #eee;background-color:#fafafa;font-weight:200;}
+.table_wrap table tbody td{position:relative;padding:12px 10px;border-bottom:1px solid #d8d8d8;font-weight:200;text-align:center;}
+
+.b_input {padding:5px 10px;width:50%;border:1px solid #c8c8c8;font-family: inherit;font-weight: 300;box-sizing: border-box;border-radius: 0;-webkit-appearance: none;-moz-appearance: none;appearance: none;vertical-align: middle;}
+.b_input.width{width:120px;}
+

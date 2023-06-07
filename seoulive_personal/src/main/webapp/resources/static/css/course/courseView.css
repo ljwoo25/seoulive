@@ -1,0 +1,397 @@
+@import url(../reset.css);
+.hide{display: block;position:absolute;width:0;height:0;text-indent:-9999999px;overflow:hidden;}
+
+
+/* 커버 */
+.plan_page {
+    width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.plan_cover{
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+.cover_img img{
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 350px;
+    z-index: 1;
+}
+
+.cover_bleft {
+    float: left;
+    width: 520px;
+    height: 100%;
+}
+.cover_bright{
+    position: absolute;
+    width: 290px;
+    border: 1px solid black;
+    float: right;
+    color: black;
+    font-size: 17px;
+    top: 81%;
+    left: 70%;
+    line-height: 34px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+.plan_title {
+    position: absolute;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    top: 10%;
+    left: 3%;
+}
+.plan_datetheme {
+    width: 100%;
+    padding-top: 8px;
+}
+.plan_date {
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    float: left;
+    top: 85%;
+    left: 3%;
+    line-height: 20px;
+}
+.plan_user {
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    float: left;
+    top: 75%;
+    left: 3%;
+    line-height: 20px;
+}
+
+.title_function {
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    left: 80%;
+    margin-top: 10px;
+    line-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.url_setClipboard {
+    position: relative;
+    border: 1px solid salmon;
+}
+.buddyBtn {
+    float: left;
+    padding-left: 1px;
+    border: 1px solid saddlebrown;
+}
+#myButton {
+    border: none;
+    float: left;
+    background-color: white;
+    border: 1px solid seagreen;
+}
+
+/* 일정표,댓글 탭 */
+.plan_mnu_box {
+    float: left;
+    /*display: block;*/
+    /*position: relative;*/
+    width: 300px;
+    height: 70px;
+    /* 수정 */
+    margin-right: 300px;
+    position: relative;
+    top: 10px;
+    right:500px;
+
+    background-color: white;
+    padding-right: 20px;
+    /*border: 1px solid sandybrown;*/
+}
+.plan_mnu {
+    display: block;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-size: 18px;
+    color: black;
+    float: left;
+    cursor: pointer;
+    /*border: 1px solid aqua;*/
+}
+.plan_mnu_line {
+    float: left;
+    width: 1px;
+    height: 40px;
+    background-color: #b3b3b3;
+    margin-top: 15px;
+}
+
+
+/* 본문(이후) */
+.wrap_planpage1 {
+    width: 100%;
+    height: auto;
+    border: 2px solid black;
+    margin-top: 100px;
+
+}
+
+.wrap_planpage2 {
+    width: 100%;
+    height: 80vh;
+    border: 2px solid black;
+    margin-top: 50px;
+}
+
+.planpage_day{
+    position: absolute;
+    width: 200px;
+    height: 80vh;
+    border-right: 2px solid black;
+}
+
+.planpage_daytxt {
+    position: relative;
+    line-height: 100px;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45px;
+    top: 35%;
+}
+
+.planpage_title {
+    /* 2020.03.06 */
+    position: relative;
+    /*border: 1px solid slateblue;*/
+    width: 800px;
+    height: 15%;
+    left: 200px;
+    font-size: 1.5rem;
+    padding-left: 3px;
+}
+
+.planpage_daytitle {
+    /* 끝 부분 */
+    position: relative;
+    width: 1000px;
+    bottom: 30px;
+    left: 200px;
+    font-size: 1.2rem;
+    padding-left: 3px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+
+.planpage_course1 {
+    position: relative;
+    bottom: 21px;
+    width: 1000px;
+    height: auto;
+    border-bottom: 2px solid black;
+    left: 200px;
+    font-size: larger;
+
+}
+.planpage_couse1pic img{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-top: 10px;
+    left: 1%;
+
+}
+
+.planpage_course1txt {
+    position: relative;
+    border: 1px solid slateblue;
+    font-size: 1.5rem;
+    width: 250px;
+    height: 50px;
+    top: 15%;
+    left: 2%;
+}
+
+.planpage_course1review {
+    position: relative;
+    border: 1px solid black;
+    width: 310px;
+    height: 80px;
+    left: 48%;
+    font-size: 15px;
+    padding-right: 10%;
+    bottom: 10px;
+    text-align: left; /* 왼쪽 정렬 추가 */
+    padding-left: 2px;
+    padding-top: 2px;
+    overflow: hidden; /* 내용이 넘칠 경우 감춤 */
+    text-overflow: ellipsis; /* 내용이 넘칠 경우 말줄임표 (...) 표시 */
+
+}
+
+/* 본문(이후)끝 */
+
+/* 맵 */
+.map {
+    display: block;
+    border: 1px solid saddlebrown;
+    width: 1200px;
+    height: 500px;
+}
+.map img {
+    width: 100%;
+    height: 500px;
+}
+
+/* 댓글 */
+.comm_page {
+    position: relative;
+    width: 1210px;
+    height: 453px;
+    margin-top: 2%;
+    border: 1px solid black;
+}
+.comm_list {
+    position: relative;
+    width: 1200px;
+    height: 50px;
+    border-bottom: 1px solid black;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 50px;
+    padding-left: 10px;
+
+}
+.comm_write {
+    width: 1200px;
+    height: 100px;
+
+}
+.comm_writecontent {
+    position: absolute;
+}
+.comm_rigitbutton {
+    position: relative;
+    top: 20px;
+    left: 90%;
+    border-radius: 8%;
+    text-align: center;
+    justify-content: center;
+}
+.comments {
+
+    display: block;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.comm_user_info {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid black;
+}
+.comm_userpic img {
+    width: 90px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 3px;
+    display: flex;
+    border-radius: 90%;
+    position: absolute;
+}
+.username {
+    position: relative;
+    display: flex;
+
+    width: 100px;
+    height: 100px;
+    margin-left: 110px;
+    margin-top: 20px;
+
+    margin-right: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.comm_usercommtime {
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-left: 300px;
+    bottom: 100px;
+}
+.comm_usercommtxt{
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-left: 110px;
+    bottom: 150px;
+    /* border: 3px solid rgba(64, 186, 195, 0.482); */
+}
+
+
+.getContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.boardList,
+.viewModify{
+    flex: 1;
+    width: 20px;
+    height: 50px;
+
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+    border: none;
+    background: white;
+}
+
+.boardList {
+    color: #49539E;
+
+}
+
+.viewModify{
+    margin-left: 10px;
+    color: #e76649;
+}
+
+/*  */
+#container{margin:0 auto;max-width:1200px;}
+
+/* 게시판 공통 테이블 */
+.table_wrap table{width:100%;border-spacing:0;border-top:2px solid #2b2b2b;table-layout:fixed;}
+.table_wrap table thead th{padding:16px 10px;border-bottom:1px solid #d8d8d8;background-color:#f9f9f9;font-weight:400;}
+.table_wrap table tbody th{padding:15px 10px;border-bottom:1px solid #eee;background-color:#fafafa;font-weight:200;}
+.table_wrap table tbody td{position:relative;padding:12px 10px;border-bottom:1px solid #d8d8d8;font-weight:200;text-align:center;}
+
+.b_input {padding:5px 10px;width:50%;border:1px solid #c8c8c8;font-family: inherit;font-weight: 300;box-sizing: border-box;border-radius: 0;-webkit-appearance: none;-moz-appearance: none;appearance: none;vertical-align: middle;}
+.b_input.width{width:120px;}
+

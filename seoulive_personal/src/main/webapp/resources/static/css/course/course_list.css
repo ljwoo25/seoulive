@@ -1,0 +1,210 @@
+@charset "utf8";
+@import url('reset.css');
+
+.search_make {
+    width: 1220px;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.search_make::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.search_make .course_category{
+    display: block;
+    width: 120px;
+    height: 34px;
+    font-size: 20px;
+    margin-right: 30px;
+    float: left;
+
+}
+
+.search_make .search_box{
+    display: block;
+    width: 600px;
+    height: 30px;
+    font-size: 20px;
+    margin-right: 30px;
+    float: left;
+
+
+    position: relative;
+}
+
+.search_make .search_button{
+    display: block;
+    width: 80px;
+    height: 34px;
+    font-size: 20px;
+    float: left;
+
+}
+
+.search_make .make_button{
+    display: block;
+    width: 80px;
+    height: 34px;
+    font-size: 20px;
+    float: right;
+
+}
+
+.course_list {
+	margin-left: 50px;
+    display: block;
+    justify-content: center;
+}
+
+.course_object_size {
+	height: 562px;
+	margin: 0px;
+	padding: 0px;
+	
+	float: left;
+}
+
+.course_list .course_object {
+    border: 1px solid rgb(230, 230, 230);
+    width: 380px;
+    height: auto;
+    margin: 20px;
+	
+    position: relative;
+
+}
+
+
+.course_list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.course_list .course_object .top_img{
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 125px;
+    z-index: 1;
+    
+
+    position: relative;
+}
+
+.course_list .course_object .course_top{
+    display: block;
+    border: 1px solid rgb(230, 230, 230);
+    width: 100%;
+    height: 125px;
+    
+
+
+    position: relative;
+}
+
+.course_list .course_object .course_top strong{
+    display: block;
+    font-size: 20px;
+    color: #000;
+    margin: 15px;
+}
+
+.course_list .course_object .course_top ul{
+    display: block;
+    font-size: 15px;
+    color: #000;
+    margin: 15px;
+    margin-top: 20px;
+    
+}
+
+.course_list .course_object .course_top ul li{
+    margin-bottom: 4px;
+}
+
+.course_list .course_object .course_top .user_info{
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+    display: block;
+    color: #000;
+    font-size: 16px;
+}
+
+.course_list .course_object .course_top .user_info .user_img img{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+
+    margin-right: 5px;
+
+    position: relative;
+}
+
+.course_list .course_object > ul {
+    display: block;
+}
+
+.course_list .course_object > ul li{
+    margin-left: 15px;
+    background: url(../img/line_leftobj.png) 0 0 repeat-y;
+    line-height: 2.8;
+}
+
+.course_list .course_object > ul li > span{
+    display: block;
+    margin-left: -5px;
+    padding-left: 20px;
+    background: url(../img/ico_leftobj.png) 0 50% no-repeat;
+    color: #000;
+    font-size: 16px;
+}
+
+#pagination {
+	display: flex;
+	margin: 0 auto;
+	height: 50px;
+	text-align: center !important;
+}
+#pagination ul {
+    float: right;
+    list-style: none;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: bold;
+    
+ }
+ #pagination ul >li {
+    float: left;
+
+    width: 40px;
+    height: 30px;
+    /* vertical-align: middle; */
+  	/* border: 1px solid black; */
+
+    line-height: 30px;
+    cursor: pointer;
+}
+.Prev, .Next {
+    width: 70px !important;
+
+    color: white;
+    background-color: royalblue;
+}
+.current {
+    border: 3px outset gold;
+}
+#pagination ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}

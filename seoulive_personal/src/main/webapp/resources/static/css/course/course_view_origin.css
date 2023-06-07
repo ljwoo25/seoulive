@@ -1,0 +1,105 @@
+@charset "utf8";
+
+.view {
+    border: 1px solid black;
+    width: 1200px;
+}
+
+.view .view_func {
+	border-top: 1px dashed #DDD;
+    border-bottom: 1px dashed #DDD;
+    padding: 20px;
+    height: 30px;
+}
+
+.view .view_day {
+    border-top: 3px solid #777;
+    border-bottom: 3px solid #777;
+
+    position: relative;
+}
+
+.view .view_day_left{
+    width: 150px;
+    margin: 30vh 60px;
+    float: left;
+    height: 100%;
+
+    position: relative;
+}
+
+.view .view_day_left .day_text{
+    
+    margin: auto;
+
+    position: relative;
+}
+
+.view .view_day_right{
+    float: left;
+}
+
+.view .view_day::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.view .view_day .view_day_top {
+    border-bottom: 1px solid #DDD;
+    width: 500px;
+    padding: 20px;
+    height: 50px;
+}
+
+.view .view_day .view_day_right > ul > li {
+    border: 1px solid #DDD;
+}
+
+/* 댓글 */
+.comm_page {
+    border: 1px solid black;
+    width: 1200px;
+    box-sizing: border-box;
+    padding: 80px;
+}
+.comments {
+    border: 1px solid black;
+    width: 960px;
+    margin-left: 0px;
+}
+.comm_obj {
+    float: left;
+}
+
+.comm_usercommtime {
+    float: right;
+}
+.comm_user_info::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 버튼 */
+.getContainer {
+    border: 1px solid black;
+    width: 1200px;
+    box-sizing: border-box;
+    padding: 0 250px;
+}
+.btn{
+    float: left;
+    margin: 40px 80px;
+
+}
+.btnsize {
+    width: 50px;
+    height: 50px;
+    background: skyblue;
+    cursor: pointer;
+}
+.getContainer::after {
+    content: '';
+    display: block;
+    clear: both;
+}

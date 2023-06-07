@@ -1,0 +1,212 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Orbitron&family=Roboto&display=swap');
+
+/* 전체 영역 */
+form {
+    width: 1200px;
+    height: 1150px;
+    margin: auto;
+}
+/* 헤더 */
+.travel_header {
+    display: flex;
+    align-items: center;
+    margin: 10px 0 10px 0;
+}
+/* 제목 */
+.travel_title {
+    display: flex;
+    align-items: center;
+    margin: 5px auto;
+    height: 100px;
+}
+.travel_title input {
+
+    width: 1200px;
+    height: 50px;
+    margin: 5px auto;
+    border: 1px solid #ddd;
+    font-size: 18px;
+
+}
+/* 테마 */
+.travel_category {
+    margin: 10px 0 10px 0;
+}
+.travel_thema {
+    height: 40px;
+    font-size: 17px;
+    margin: 10px 5px;
+}
+.travel_thema label {
+    /*text-align: left;*/
+    cursor: pointer;
+    height: 30px;
+    font-size: 16px;
+    margin: 0 20px 0 20px;
+
+}
+.travel_thema input[type="radio"]:checked + span {
+    font-weight: bold;
+}
+.travel_thema input[type="radio"] {
+    position: absolute;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+}
+/* 캘린더 */
+.cal {
+    margin: 10px 0 10px 0;
+}
+.cal_input {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    height: 100px;
+}
+.cal_date_input {
+    height: 70px;
+    width: 500px;
+}
+#start_date_input {
+    margin: 0 5px 0 5px;
+}
+#end_date_input {
+    margin: 0 5px 0 5px;
+}
+.cal_time_input {
+    height: 70px;
+    width: 500px;
+}
+#start_time_input {
+    margin: 0 5px 0 5px;
+}
+#end_time_input {
+    margin: 0 5px 0 5px;
+}
+.cal_date_input > input {
+    border: 1px solid #ddd;
+    margin: 5px 0 5px 0;
+    height: 30px;
+    width: 200px;
+}
+.cal_time_input > input {
+    border: 1px solid #ddd;
+    margin: 5px 0 5px 0;
+    height: 30px;
+    width: 200px;
+}
+/* 내용 */
+textarea {
+    width: 1200px;
+    margin: 10px auto;
+    height: 275px;
+    font-size: 14px;
+    resize: none;
+    border: 1px solid #ddd;
+}
+/* 주소 */
+.loc {
+    margin: 10px 0 10px 0;
+}
+.location > input:nth-of-type(1) {
+    width: 100px;
+    height: 25px;
+    border: 1px solid #ddd;
+    margin: 5px 0 5px 0;
+}
+.location > input:nth-of-type(2) {
+    width: 300px;
+    height: 25px;
+    border: 1px solid #ddd;
+    margin: 5px 0 5px 0;
+}
+.location > input:nth-of-type(3) {
+    width: 100px;
+    height: 25px;
+    border: 1px solid #ddd;
+    margin: 5px 0 5px 0;
+}
+.loc_btn {
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    width: 100px;
+    height: 28px;
+    padding: 2px 8px 0 8px;
+    border: none;
+}
+.loc_btn:hover {
+    background: #49539E;
+    border-color: #49539E;
+    padding: 2px 8px 0 8px;
+}
+
+/* 첨부 파일 */
+.picture {
+    margin: 10px 0 10px 0;
+}
+.upload {
+    width: 100px;
+    height: 100px;
+    margin: 0 5px 5px 0;
+    background-image: url(../../../../resources/static/img/bg_upload.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    font-size: 0;
+    line-height: 0;
+}
+.image-preview {
+    display: flex;
+    float: left;
+}
+.image-preview > li > img {
+    width: 100px;
+    height: 100px;
+}
+.btn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.btn_accent {
+    margin: 0 5px 0 5px;
+}
+.btn_cancel {
+    margin: 0 5px 0 5px;
+}
+.btn_accent button {
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+    padding: 2px 8px 0 8px;
+    border: none;
+}
+.btn_accent button:hover {
+    background: #49539E;
+    border-color: #49539E;
+    padding: 2px 8px 0 8px;
+}
+.btn_cancel button {
+    background: #f1f1f1;
+    border-color: #f1f1f1;
+    color: #000000;
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+    padding: 2px 8px 0 8px;
+    border: none;
+}
+.btn_cancel button:hover {
+    background: #d8d8d8;
+    border-color: #d8d8d8;
+    padding: 2px 8px 0 8px;
+}

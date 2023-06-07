@@ -1,0 +1,211 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Orbitron&family=Roboto&display=swap');
+@import url('../../reset.css');
+
+/* 가입 영역 */
+.join_container {
+    box-sizing: inherit;
+    width: 1200px;
+    height: 700px;
+
+    position: relative;
+    margin: 0 auto;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    background: rgb(248, 248, 248);
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 4px;
+}
+.join_container.inner {
+    width: 50%;
+    box-sizing: border-box;
+}
+/* 입력 폼 */
+.join_wrap {
+    margin: auto 10px;
+    width: 100%;
+}
+.join_wrap p {
+    margin-bottom: 5px;
+}
+.join_wrap input, select {
+    display: inline-block;
+    line-height: 20px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 4px;
+    box-sizing: border-box;
+    vertical-align: top;
+    position: relative;
+}
+.join_wrap input {
+    width: 100%;
+}
+.join_btn_wrap {
+    position: relative;
+}
+/* 생년월일 */
+.join_wrap_birth {
+    box-sizing: inherit;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 10px;
+}
+/* 생년월일, 성별 */
+.selection_list_warp {
+    position: relative;
+    box-sizing: content-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 4px;
+}
+/* 약관 동의 */
+.join_wrap input[type="checkbox"] {
+    width: 15px;
+}
+.terms_wrap {
+    top: 50px;
+    margin-left: 10px;
+}
+/* botton */
+.selection_item {
+    cursor: pointer;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+/* 프로필 사진 */
+.join_wrap.profile{
+    height: 210px;
+    position: relative;
+}
+.join_wrap img{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    right: 190px;
+}
+.image_container{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    right: 190px;
+
+}
+.upload_image{
+    width: 200px;
+    margin: 0px auto;
+    color: #333;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+}
+label {
+    height: 15px;
+    cursor: pointer;
+}
+/* 인증/확인 버튼 */
+.join_wrap .join_btn_wrap .btn {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 116px;
+    height: 49px;
+    cursor: pointer;
+
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background: rgb(73, 83, 158);
+    border-radius: 4px;
+    border: 1px solid rgb(34, 38, 73);
+}
+/* 가입버튼 */
+.join_button {
+    margin: 10px;
+    width: 100%;
+}
+.join_button input {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background: rgb(73, 83, 158);
+    border-radius: 4px;
+    border: 1px solid rgb(34, 38, 73);
+}
+
+/* 리스트 펼치기 */
+.selection_item {
+    cursor: pointer;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+.selection_list {
+    display: none;
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    top: 9px;
+    left: 0px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    /* overflow: hidden scroll; */
+}
+.selection_item.on+.selection_list{
+    display: block;
+}
+.selection_list li {
+    height: 40px;
+    padding: 5px 8px;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-size: 14px;
+}
+.selection_list li button {
+    width: 100%;
+    padding: 7px 10px;
+    border: none;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: left;
+}
+.selection_list li button:hover,
+.selection_list li button:focus {
+    background-color: #f4f4f4;
+}
+.selection_item i {
+    display: flex;
+    justify-content: end;
+}

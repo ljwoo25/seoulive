@@ -1,0 +1,254 @@
+@charset "utf-8"; @import url(../reset.css); a { text-decoration: none; color: #222; }
+ul, li, ol { list-style: none; }
+
+/* 검색창 */
+.search_wrap { height: 100px; transform: translate(-50%, -50%); }
+.search { position: absolute; top: 70%; left: 50%; width: 100%; display: flex; }
+.search select { width: 20%; border: 3px solid #49539E; border-right: none; border-radius: 5px 0 0 5px; padding-left: 10px; font-weight: 600; }
+.searchTerm { width: 100%; border: 3px solid #49539E; border-left: none; border-right: none; padding: 5px; outline: none; color: #9DBFAF; }
+.searchTerm:focus { color: #222; }
+.searchButton { width: 70px; height: 56px; border: 1px solid #49539E; background: #fff; text-align: center; color: #fff; border-radius: 0 5px 5px 0; cursor: pointer; font-size: 20px; }
+
+/* 탭메뉴 */
+.tab { width: 100%; display: flex; list-style: none; margin: 0px; padding: 0px; overflow: hidden; }
+.tab li { float: left; width: 20%; background: #f5f5f5; }
+.tab li a { display: block; height: 30px; line-height: 30px; color: black; text-align: center; text-decoration: none; padding: 10px; }
+.tabcont { display: none; margin: 0 auto; margin-top:10px; padding: 15px; color: #222; border: 1px solid #ededed; }
+.tabcont h3 { margin-bottom: 10px; }
+ul.tab li.on { background-color: #49539E; }
+ul.tab li.on a { color: #ededed; }
+.tabcont.on { display: block; }
+
+/* 캘린더 */
+.calendarWrap button { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0; outline: 0; font-size: 20px; background-color: #f3f3f3; margin-bottom: 10px; cursor: pointer; }
+.calendarWrap th { font-size: 17px; }
+.calendarWrap td { width: 60px; height: 60px; cursor: pointer; }
+.calendarWrap .contBox { display: flex; align-items:center; justify-content: center; height: 70vh; }
+.calendarWrap .item { text-align: center; }
+.calendarWrap .item_cal { background-color: #f3f3f3; padding: 20px; }
+#today { width: 160px; margin-right: 60px; margin-bottom: 60px; font-weight: bold; }
+#week { font-size: 30px; }
+#date { font-size: 70px; }
+.top-bar { display: inline; font-weight: bold; }
+.today-circle { width: 50px; height: 50px; border-radius: 50%; border-width: 3px; background-color: #49539E; color: #fff; }
+.click-circle { width: 50px; height: 50px; border-radius: 50%; border-width: 2px; border-style: solid; border-color: #49539E; }
+
+/* list */
+.listWrap { padding: 0 10px; border: 0.5px solid #000; border-left: 0; border-right: 0; }
+
+/* pagination */
+.col:first-of-type { margin-left: 0; }
+
+/* CLEARFIX */
+.cf:before,
+.cf:after { content: " "; display: table; }
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+.pagination_wrap { display: flex; /* max-width: 1085px; */
+    margin: 0 auto; position: relative; text-align: center; padding: 10px 0; }
+.pagination_wrap ul.pagination { margin: 0; padding: 0; width: 100%; }
+.pagination_wrap ul.pagination li { display: inline-block; padding: 0 5px; }
+.pagination_wrap ul.pagination li a { display: inline-block; padding: 10px 18px; color: #222; }
+.pagination_wrap ul.pagination li a { width: 40px; height: 40px; line-height: 40px; padding: 0; text-align: center; }
+.pagination_wrap ul.pagination li a.active { background-color: #49539E; /* border-radius: 100%; */
+    color: #fff; font-weight: 600; }
+
+/* button */
+.btn_wrap { display: inline-block; }
+.write_btn { width: 100px; padding: 10px 20px; background-color:#49539E; border:0; }
+.btn_wrap .write_btn a { display: block; color: #fff; }
+
+
+/* 게시판 리스트 에리어 */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700'); body { font-family: 'Roboto', sans-serif; background: #fff; margin: 0px,100px,100px,100px; padding: 1rem; }
+
+.gridViewContainer { display: flex; flex-wrap: wrap; /* margin-right: -1rem; */
+    margin-top: 50px; margin-right: 5%;
+    /*margin-left: 15%; */
+    /* */ }
+
+.gridView-listItem { display: flex; align-self: stretch; flex-direction: column; width: 100%; }
+
+.gridView-tile { display: flex; flex-direction: column; flex-grow: 1; position: relative; /* grid gutters */
+    margin-bottom: 1rem; margin-right: 1rem; background: #fff; overflow: hidden; border-radius: 4px; box-shadow: 0 3px 9px -3px rgba(0, 0, 0, 0.3) }
+
+
+
+.gridView-tile .u-link { text-decoration: none; }
+
+.gridView-imageSection { position: relative; overflow: hidden; border-radius: 4px 4px 0 0; }
+
+/* Enforce the aspect ratio with padding trick */
+.gridView-imageSection:after { content: ' '; display: block; /* 16:9 */}
+
+.gridView-imageSection .gridView-image {}
+.gridView-imageSection .gridView-image img{
+    /*position: absolute; */
+    top: 0; bottom: 0; left: 0; right: 0;
+    width: 250px; height: 140px;
+    background-color: #f5f5f5; background-size: cover; background-repeat: no-repeat; background-position: center;
+}
+
+.gridView-duration { position: absolute; bottom: .5rem; left: .5rem; background: rgba(0, 0, 0, 0.6); color: #fff; font-weight: bold; padding: .2rem .4rem; font-size: 0.8rem; border-radius: 3px; }
+
+.gridView-detailsSection { padding: .5rem .6rem; display: flex; flex-direction: column; flex-grow: 1; word-break: break-word; }
+
+.gridView-detailsBottom { display: flex; align-items: center; margin-top: .5rem; color: #777; line-height: 1; }
+.gridView-image img{}
+.gridView-title { overflow: hidden; position: relative; color: #444; font-size: 1.2rem; line-height: 1.2em; font-weight: bold; display: block; /* Using webkit only multi line ellisis trick */
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; /* lines to show: 3 - fallback for no webkit will just cut text */
+    max-height: calc(1.2em * 3); }
+
+.gridView-title:hover { text-decoration: underline; cursor: pointer; }
+
+.gridView-date { flex-grow: 1; font-size: 0.9rem; }
+
+.mediaType-iconMultiple { display: flex; }
+
+.gridView-tile .mediaType-iconMultiple { position: absolute; right: 0; bottom: 0; }
+
+.mediaType-iconMultiple .mediaType-icon:not(:last-child) { margin-right: .5rem; }
+
+.gridView-tile .mediaType-iconMultiple .mediaType-icon:not(:last-child) { opacity: 0; transition: opacity 0.2s ease-out, transform 0.15s ease-out; top: .5rem; position: relative; }
+
+/* Add transition delays to stagger the animations */
+.gridView-tile .mediaType-iconMultiple .mediaType-icon:nth-child(1) { transition-delay: .05s; }
+
+.gridView-tile .mediaType-iconMultiple .mediaType-icon:nth-child(2) { transition-delay: .1s; }
+
+.gridView-tile .mediaType-iconMultiple .mediaType-icon:nth-child(3) { transition-delay: .15s; }
+
+.gridView-tile .mediaType-iconMultiple .mediaType-icon:nth-child(4) { transition-delay: .2s; }
+
+.gridView-tile .mediaType-iconMultiple .mediaType-icon:nth-child(5) { transition-delay: .25s; }
+
+/* on hover and on mobile devices */
+.gridView-tile:hover .mediaType-icon:not(:last-child) { opacity: 1; transform: translateY(-.5rem); }
+
+.gridView-detailsBottom { position: relative; }
+
+.gridView-imageSectionMaskTop { position: absolute; z-index: 1; width: 100%; height: 70px; opacity: 0; transition: opacity .4s ease-out; pointer-events: none; /* standard linear-gradient gives a harsh edge, here an easing function is
+being apllied to the gragient for a smoother result */
+    background: linear-gradient(
+            rgba(10, 20, 20, .5),
+            hsla(180, 33.3%, 5.8%, 0.473) 7.9%,
+            hsla(180, 33.3%, 5.6%, 0.441) 15.3%,
+            hsla(180, 33.3%, 5.5%, 0.408) 22.2%,
+            hsla(180, 33.3%, 5.3%, 0.371) 28.7%,
+            hsla(180, 33.3%, 5%, 0.333) 34.8%,
+            hsla(180, 33.3%, 4.8%, 0.294) 40.6%,
+            hsla(180, 33.3%, 4.5%, 0.255) 46.2%,
+            hsla(180, 33.3%, 4.1%, 0.214) 51.7%,
+            hsla(180, 33.3%, 3.6%, 0.174) 57.2%,
+            hsla(180, 33.3%, 3.1%, 0.135) 62.8%,
+            hsla(180, 33.3%, 2.5%, 0.097) 68.7%,
+            hsla(180, 33.3%, 1.7%, 0.061) 75.2%,
+            hsla(180, 33.3%, 0.9%, 0.029) 82.6%,
+            hsla(180, 33.3%, 0.2%, 0.007) 91.2%,
+            transparent
+    ); }
+
+.gridView-searchHitSelect { left: .5rem; }
+
+.gridView-menu { right: .5rem; font-size: 1.1rem; }
+
+.gridView-searchHitSelect,
+.gridView-menu { cursor: pointer; position: absolute; top: 0; z-index: 2; opacity: 0; color: rgba(255, 255, 255, 0.75); text-shadow: 0 0 4px rgba(10, 20, 20, 0.4); padding: .2rem .3rem; transition: transform .25s ease-out, opacity .25s ease-out, color .3s ease-out; }
+
+.gridView-searchHitSelect:hover,
+.gridView-menu:hover { color: rgba(255, 255, 255, 1); }
+
+.gridView-tile:hover .gridView-menu,
+.gridView-tile:hover .gridView-searchHitSelect { transform: translateY(.5rem); }
+
+.gridView-tile:hover .gridView-menu,
+.gridView-tile:hover .gridView-searchHitSelect { opacity: 1; }
+
+.gridView-tile:hover .gridView-imageSectionMaskTop { opacity: 1; }
+
+.gridView-listItem { width: 30%; }
+
+
+#container { margin:0 auto; max-width:1200px; }
+.b_input { padding:13px 10px; width: auto; height:45px; border:1px solid #ccc; font-family: inherit; font-weight: 300; box-sizing: border-box; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; vertical-align: middle; }
+.a_input { padding:13px 10px; width: auto; height:45px; border:1px solid #ccc; font-family: inherit; font-weight: 300; box-sizing: border-box; border-radius: 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; vertical-align: middle; }
+.b_input.width { width:120px; }
+
+
+/* 하트버튼 css */
+.heartButtonArea {top: 30px; }
+.heartSvg { height: 5vh; width: 5vh; }
+.like-button { display: none; }
+.like-icon { cursor: pointer; display: inline-block; vertical-align: middle; }
+.str0 { stroke:#ff4949; }
+.fil0 { fill: #ffffff; }
+.like-button:checked+svg .fil0 { fill: #ff4949; }
+
+/* 좋아요 하트 */
+
+.area_txt .fa-heart{
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+.area_txt .fa-heart.off {
+    color: #e6e6e6;
+}
+.area_txt .fa-heart.on{
+    color: #ff3333;
+}
+
+
+/* 리뷰 글쓰기 */
+.board_write_box { border-top:2px solid #49539E; }
+.board_write_box .row { display:table; width:100%; border-bottom:1px solid #ccc; table-layout:fixed; }
+.board_write_box .row > div { display:table-cell; }
+.board_write_box .row .col1 { width:20%; text-align: center; }
+.board_write_box .row .col2 { padding: 10px; width:100%; box-sizing: border-box; }
+.board_write_box .title_box { padding: 12px 15px; background-color: #fafafa; }
+.board_write_box .input_box .b_input { width: 100%; }
+.board_write_box textarea { width:100%; text-align:left; border-color:#ccc; }
+.board_write_box select { position: relative; padding:13px 10px; height:45px; width: 100%; max-width: 150px; border:1px solid #ccc; }
+
+/* 첨부파일 버튼 */
+.file_container { padding: 30px 0 0 0; }
+.file_form { position: relative; display: inline-block; width: 198px; height: 38px; line-height: 38px; border: 1px solid cornflowerblue; font-size: 12px; } /* position 기준 */
+.file_form .text { overflow: hidden; text-overflow: ellipsis; display: block; padding: 0 50px 0 10px; white-space: nowrap; }
+.file_form .text:after { position: absolute; top:0; right:0; width: 50px; background-color: #49539E; text-align: center; color: #fff; content:'파일찾기'; } /* 버튼형태 구현 */
+.file_form input[type='file'] { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 10; width: 100%; opacity: 0; }
+
+/* 페이징 */
+.paging_wrap{ width: 100%;display: inline-block;}
+.paging_wrap .paging_box{display: block; margin: 0 auto; padding-bottom: 20px;}
+.paging_wrap .paging_box ul {padding:50px 0 0;text-align: center;}
+.paging_wrap .paging_box ul li {display: inline-block;vertical-align: middle;}
+.paging_wrap .paging_box ul li a {display: block;position: relative;font-weight: 300;font-size: 16px;color: #7b7b7b;box-sizing: border-box;}
+.paging_wrap .paging_box ul li:not(.pager) a {padding: 8px 0 9px;min-width: 33px;}
+.paging_wrap .paging_box ul li a.active {padding: 9px 0 10px;border: none;background-color: #49539E;color: #fff;}
+
+.btn_wrap{
+    display: inline-block;
+    float: right;
+    margin-bottom: 20px;}
+
+
+
+/* 게시판 버튼 */
+.button_wrap {display: inline-block; float: right;}
+.button_wrap button {padding: 5px 10px; background-color: #49539e; color: #fff; border: 0; border-radius: 3px; cursor: pointer;}
+.button_wrap .buttons { padding:30px 0 0 0; text-align:right }
+.button_wrap .button_box li a { padding: 11px 16px; border: 1px solid #ccc; color: #333; border-radius: 5px; }
+.button_wrap .button_box li a.active { background-color:#49539E; color:#fff }
+.button_wrap .button_box li a:hover { background-color:#49539E; color:#fff }
+
+/* 게시판 공통 테이블 */
+.table_wrap > table { width:100%; border-spacing:0; border-top:2px solid #49539E; table-layout:fixed; }
+.table_wrap > table thead th { padding:16px 10px; border-bottom:1px solid #ccc; background-color:#f9f9f9; font-weight:400; }
+.table_wrap > table tbody th { padding:15px 10px; border-bottom:1px solid #ccc; background-color:#fafafa; font-weight:200; }
+.table_wrap > table tbody td { position:relative; padding:12px 10px; border-bottom:1px solid #ccc; font-weight:200; text-align:center; }
+.table_wrap > table tbody td.left { text-align:left;; }
+
+
+.title_box { padding:0 0 50px; }
+.title_box h2 { font-size:30px; line-height:40px; text-align:center; }

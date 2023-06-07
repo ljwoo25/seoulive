@@ -1,0 +1,113 @@
+@charset "utf8";
+
+.write {
+    border: 1px solid black;
+    width: 1200px;
+}
+
+.write .write_func {
+	border-top: 1px dashed #DDD;
+    border-bottom: 1px dashed #DDD;
+    padding: 20px;
+    height: 30px;
+}
+
+.write .write_day {
+    border-top: 3px solid #777;
+    border-bottom: 3px solid #777;
+
+    position: relative;
+}
+
+.write .write_day_plus {
+    border-bottom: 3px solid #777;
+
+    position: relative;
+}
+
+.write .write_day_left{
+    width: 150px;
+    margin: 30vh 60px;
+    float: left;
+    height: 100%;
+
+    position: relative;
+}
+
+.write .write_day_left .day_text{
+    
+    margin: auto;
+
+    position: relative;
+}
+
+.write .write_day_right{
+    float: left;
+}
+
+.write .write_day::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.write .write_day .write_day_top {
+    border-bottom: 1px solid #DDD;
+    width: 500px;
+    padding: 20px;
+    height: 50px;
+}
+
+.write .write_day .write_day_dec_choice {
+    border-bottom: 1px solid #DDD;
+    width: 500px;
+    padding: 20px;
+    height: 120px;
+    
+}
+
+.write .write_day .write_day_dec_choice div{
+    float: left;
+}
+
+.write .write_day .write_day_dec_choice::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.write .write_day .write_day_dec_search {
+    border-bottom: 1px solid #DDD;
+    width: 500px;
+    padding: 20px;
+    height: 120px;
+    
+}
+
+.write .write_day .write_day_right > ul > li {
+    border: 1px solid #DDD;
+}
+
+
+
+.write .write_day .write_day_dec_choice:last-of-type {
+    border-bottom: 0px;
+}
+
+.write .write_day .dec_plus {
+    border-bottom: 2px solid #777;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.write .write_day .day_plus {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.write .write_button {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
