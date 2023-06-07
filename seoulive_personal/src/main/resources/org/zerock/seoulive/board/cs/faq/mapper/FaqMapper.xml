@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.seoulive.board.cs.faq.mapper.FaqMapper">
+
+    <select id="selectList" resultType="org.zerock.seoulive.board.cs.faq.domain.FaqVO">
+        SELECT
+        rownum,
+        t.seq, t.writer, t.title, t.content, t.category, t.write_date
+        FROM
+        tbl_faq t
+        <where>
+            <if test="category != null and category != ''">
+                t.category = #{category}
+            </if>
+            <if test="category == null">
+                1=1
+            </if>
+        </where>
+        ORDER BY t.write_date ASC
+        OFFSET (#{currPage} - 1) * #{amount} ROWS
+        FETCH NEXT #{amount} ROWS ONLY
+    </select>
+
+    <insert id ="insert">
+        <selectKey keyProperty="seq" order="AFTER" resultType="int">
+            SELECT "TBL_FAQ_SEQ".CURRVAL FROM dual
+        </selectKey>
+
+        INSERT INTO tbl_faq(title, content, writer, category)
+            VALUES(#{title}, #{content}, #{writer}, #{category})
+    </insert>
+
+    <select id="select" resultType="org.zerock.seoulive.board.cs.faq.domain.FaqVO">
+        SELECT * FROM tbl_faq WHERE seq = #{seq}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM tbl_faq WHERE seq = #{seq}
+    </delete>
+
+    <update id="update">
+        UPDATE tbl_faq
+        SET
+            title = #{title},
+            content = #{content},
+            writer = #{writer},
+            category = #{category},
+            modify_date = current_date
+        WHERE
+            seq = #{seq}
+    </update>
+
+    <select id="getTotalAmount" resultType="java.lang.Integer">
+        SELECT
+        count(seq)
+        FROM
+        tbl_faq
+        <where>
+            <if test="category != null and category != ''">
+                category = #{category}
+            </if>
+            <if test="category == null">
+                1=1
+            </if>
+        </where>
+    </select>
+
+    <select id="getRecentList" resultType="org.zerock.seoulive.board.cs.faq.domain.FaqVO">
+        <![CDATA[
+            SELECT *
+            FROM (
+                     SELECT seq, title, content, writer, category, write_date, modify_date
+                     FROM tbl_faq
+                     ORDER BY seq DESC
+                 )
+            WHERE rownum <= 5
+            ORDER BY seq ASC
+        ]]>
+    </select>
+</mapper>

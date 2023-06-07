@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.seoulive.board.free.persistence.FreeCommentDAO">
+
+    <select id="freeCommentList" resultType="org.zerock.seoulive.board.free.domain.FreeCommentDTO">
+        SELECT *
+        FROM
+        TBL_COMMENT
+        WHERE
+        BOARD_NAME='freeboard' AND POST_SEQ=#{seq}
+    </select>
+
+    <insert id="freeCommentInsert" parameterType="org.zerock.seoulive.board.free.domain.FreeCommentDTO">
+        INSERT INTO tbl_comment(seq,writer,content,write_date,modify_date,board_name,post_seq)
+        VALUES (SEQ_TBL_COMMENT.nextval,#{writer},#{content},sysdate,null,#{board_name},#{post_seq})
+    </insert>
+
+    <delete id="freeCommentDelete" parameterType="int">
+        delete from tbl_comment where seq=#{seq}
+    </delete>
+
+    <delete id="freeCommentPostDelete" parameterType="int">
+        delete from tbl_comment where post_seq=#{seq}
+    </delete>
+
+    <update id="freeCommentUpdate" parameterType="org.zerock.seoulive.board.free.domain.FreeCommentDTO">
+        update tbl_comment set content=#{content}, modify_date=sysdate
+        where seq=#{seq} AND board_name = #{board_name} AND post_seq = #{post_seq}
+    </update>
+
+<!--    update tbl_comment set content='수정테스트', modify_date=sysdate-->
+<!--    where seq=8 AND BOARD_NAME = 'freeboard';-->
+<!--    update tbl_comment set content='수정테스트', modify_date=sysdate-->
+<!--    where seq=8 AND BOARD_NAME = 'freeboard' AND post_seq=20;-->
+
+
+</mapper>

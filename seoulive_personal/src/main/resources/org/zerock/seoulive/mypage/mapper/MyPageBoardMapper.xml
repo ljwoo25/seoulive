@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.seoulive.mypage.mapper.MyPageBoardMapper">
+
+
+	<select id="selectReview" resultType="org.zerock.seoulive.board.review.domain.ReviewBoardVO">
+		SELECT *
+		FROM tbl_review
+		WHERE seq = #{seq}
+	</select>
+	
+	
+	<!-- 
+	<select id="selectReview">
+	
+	</select>
+	 -->
+	
+	
+	
+	
+	<select id="selectLikeList" resultType="org.zerock.seoulive.mypage.domain.tbl_likeVO">
+		SELECT 
+	    	l.seq as like_seq,
+	    	m.email as email,
+		    l.board_seq as board_Number,
+		    'tbl_' || l.board as board_Name
+		FROM 
+	    	tbl_member m , tbl_like l
+		WHERE 
+	    	m.email = l.email
+
+	</select>
+
+	<delete id="withdrawal">
+		delete from tbl_member
+		where email = ${email} and password = ${password}
+	</delete>
+
+
+</mapper>

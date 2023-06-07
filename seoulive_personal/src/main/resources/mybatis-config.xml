@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE configuration
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
 
 <configuration>
 
+    <settings>
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+
     <mappers>
-    	<mapper resource="org/zerock/seoulive/board/course/persistence/CourseMapper.xml" />
+
+        <mapper resource="org/zerock/seoulive/board/free/persistence/FreeDAOMapper.xml" />
+        <mapper resource="org/zerock/seoulive/board/free/persistence/FreeCommentDAOMapper.xml" />
+        <mapper resource="org/zerock/seoulive/member/join/mapper/UserMapper.xml" />
+
+        <mapper resource="org/zerock/seoulive/member/join/mapper/UserMapper.xml" />
+        <mapper resource="org/zerock/seoulive/member/information/mapper/MemberBoardMapper.xml"/>
+
+        <mapper resource="org/zerock/seoulive/board/course/mapper/CommentMapper.xml" />
+        <mapper resource="org/zerock/seoulive/board/course/mapper/CourseMapper.xml" />
+
     </mappers>
 
 </configuration>

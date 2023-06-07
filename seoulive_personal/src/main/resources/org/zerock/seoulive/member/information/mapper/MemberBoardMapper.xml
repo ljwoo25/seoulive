@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.seoulive.member.information.mapper.MemberBoardMapper">
+
+
+	<select id="selectPassword" resultType="java.lang.String">
+		SELECT password FROM tbl_member WHERE email = #{email}
+	</select>
+        
+    <insert id="insertPassword" >
+    	
+    	INSERT INTO tbl_member(password)
+    	VALUES(#{password})
+    	WHERE email = #{email}
+    </insert>
+ 	
+ 	<update id="update">
+    UPDATE tbl_member
+    SET
+        
+        password = #{password},
+        nickname = #{nickname},
+        birth_date = #{birth_date},
+        gender = #{gender},
+        introduction = #{introduction}
+        join_date = #{join_date}
+        profile_img = #{profile_img}
+    WHERE
+        email = #{email}
+  </update>
+ 	
+ 	
+ 	<update id="updatePassword">
+ 		UPDATE tbl_member
+ 		SET password = #{password}
+ 		WHERE email = #{email}
+ 	</update>
+        
+    <select id="selectEmail" resultType="org.zerock.seoulive.member.information.domain.tbl_memberVO" >
+    	SELECT
+    		*
+    	FROM 
+    		tbl_member
+    	WHERE 
+    		email = #{email}
+    </select>
+     
+    <insert id="createUser">
+    	 INSERT INTO tbl_member
+            (
+            email,
+            password,
+            nickname,
+            birth_date,
+            join_date,
+            gender,
+            introduction,
+            profile_img
+            )
+        VALUES (
+            #{email},
+            #{password},
+            #{nickName},
+            #{birth_date},
+            #{join_date},
+            #{gender},
+            #{introduction},
+            #{profile_img}
+            )
+    </insert>
+    
+    <delete id="deleteEmail">
+    	DELETE FROM tbl_member
+    	WHERE email = #{email}
+    </delete>
+    
+    <select id="selectBirthDate" resultType="java.util.Date">
+    	SELECT to_date(to_char(join_date,'yyyy-MM-dd'),'yyyy-MM-dd' )
+    	FROM tbl_member
+    	WHERE email = #{email}
+    </select>
+    
+    <update id="updateBirthDate">
+    	UPDATE tbl_member
+    	SET
+			birth_date = to_date(#{birth_date jdbcType="Date"},'yyyy-MM-dd')
+    	WHERE
+    	  		email = #{email}
+    	
+    </update>
+    
+    <select id="selectJoinDate" resultType="java.util.Date">
+    	SELECT join_date
+    	FROM tbl_member
+    	WHERE email = #{email}
+    </select>
+    
+    <update id="updateJoinDate">
+    	UPDATE tbl_member
+    	SET
+    		 join_date = to_date(#{join_date jdbcType="Date"},'yyyy-MM-dd')
+    	WHERE 
+    		email = #{email}
+    </update>
+    
+    <select id="selectGender" resultType="java.lang.String">
+    	SELECT gender
+    	FROM tbl_member
+    	WHERE email = #{email}
+    </select>
+    
+        <update id="updateGender">
+    	UPDATE tbl_member
+    	SET
+    		gender = #{gender}
+    	WHERE 
+    		email = #{email}
+    </update>
+    
+    <select id="selectIntroduction" resultType="java.lang.String">
+    	SELECT Introduction
+    	FROM tbl_member
+    	WHERE email = #{email}
+    </select>
+    
+        <update id="updateIntroduction">
+    	UPDATE tbl_member
+    	SET
+    		Introduction = #{Introduction}
+    	WHERE 
+    		email = #{email}
+    </update>
+    
+    <select id="selectProfileImg" resultType="java.lang.String">
+    	SELECT profile_Img
+    	FROM tbl_member
+    	WHERE email = #{email}
+    </select>
+    
+        <update id="updateProfileImg">
+    	UPDATE tbl_member
+    	SET
+    		profile_img = #{profile_img}
+    	WHERE 
+    		email = #{email}
+    </update>
+</mapper>

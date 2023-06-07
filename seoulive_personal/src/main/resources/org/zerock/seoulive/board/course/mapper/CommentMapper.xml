@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.seoulive.board.course.mapper.CommentMapper">
+
+    <!-- 작성   -->
+    <insert id="commRegit" parameterType = "org.zerock.seoulive.board.course.domain.CourseCommDTO">
+        insert into tbl_comment (WRITER,CONTENT,BOARD_NAME,POST_SEQ)
+        values (#{WRITER}, #{CONTENT}, 'course',#{POST_SEQ,jdbcType=INTEGER})
+    </insert>
+
+    <!--조회-->
+    <select id="commList" resultType="org.zerock.seoulive.board.course.domain.CourseCommVO">
+        select SEQ, WRITER, CONTENT, WRITE_DATE, BOARD_NAME, POST_SEQ
+        from tbl_comment
+        where post_seq = #{seq}
+    </select>
+
+    <!-- 삭제 -->
+    <delete id="commDelete" >
+        delete from tbl_comment where seq = #{seq}
+    </delete>
+
+    <!-- 수정   -->
+    <update id="commUpdate" >
+        update tbl_comment
+        set content = #{content},
+        modify_date = current_date
+        where seq= #{seq}
+    </update>
+
+
+</mapper>
